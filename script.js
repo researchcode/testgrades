@@ -96,3 +96,12 @@ function calcularNotaSobre50(nota, notaBase) {
 }
 
 // Función para calcular el total de la
+
+// Función para calcular el total de la nota
+function calcularTotal(estudiante) {
+  const quicesYtareas = estudiante.notas.quicesYtareas * 0.10;
+  const talleres = promedioTalleres(estudiante.notas.talleres) * 0.13;
+  const actividadBD = estudiante.notas.actividadBD * 0.04;
+  const entrega1 = estudiante.notas.entrega1 * 0.13;
+  return (quicesYtareas + talleres + actividadBD + entrega1).toFixed(2);
+}
