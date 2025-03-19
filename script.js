@@ -49,7 +49,7 @@ function consultarNotas() {
           <tr>
             <td>Talleres</td>
             <td>13%</td>
-            <td>${calcularNotaSobre20(promedioTalleres(estudiante.notas.talleres*0.13))}</td>            
+            <td>${calcularNotaSobre20(promedioTalleres(estudiante.notas.talleres)*0.13)}</td>            
             <td>${calcularNotaSobre50(estudiante.notas.talleres*0.13, 20)}</td>
           </tr>
           <tr>
