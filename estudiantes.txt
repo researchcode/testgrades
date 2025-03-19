@@ -1,0 +1,22 @@
+[
+  {
+    "codigo": "12345",
+    "nombre": "Juan Perez",
+    "notas": {
+      "quicesYtareas": 42,
+      "talleres": [35, 40, 45],  
+      "actividadBD": 48,
+      "entrega1": 39
+    }
+  },
+  {
+    "codigo": "67890",
+    "nombre": "Maria Lopez",
+    "notas": {
+      "quicesYtareas": 50,
+      "talleres": [50, 50, 50],  
+      "actividadBD": 50,
+      "entrega1": 50
+    }
+  }
+]
