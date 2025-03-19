@@ -43,26 +43,26 @@ function consultarNotas() {
           <tr>
             <td>Quices y tareas</td>
             <td>10%</td>
-            <td>${calcularNotaSobre20(estudiante.notas.quicesYtareas)}</td>           
-            <td>${calcularNotaSobre50(estudiante.notas.quicesYtareas, 20)}</td>
+            <td>${calcularNotaSobre20(estudiante.notas.quicesYtareas*0.10)}</td>           
+            <td>${calcularNotaSobre50(estudiante.notas.quicesYtareas*0.10, 20)}</td>
           </tr>
           <tr>
             <td>Talleres</td>
             <td>13%</td>
-            <td>${calcularNotaSobre20(promedioTalleres(estudiante.notas.talleres))}</td>            
-            <td>${calcularNotaSobre50(estudiante.notas.talleres, 20)}</td>
+            <td>${calcularNotaSobre20(promedioTalleres(estudiante.notas.talleres*0.13))}</td>            
+            <td>${calcularNotaSobre50(estudiante.notas.talleres*0.13, 20)}</td>
           </tr>
           <tr>
             <td>Actividad BD</td>
             <td>4%</td>
-            <td>${calcularNotaSobre20(estudiante.notas.actividadBD)}</td>           
-            <td>${calcularNotaSobre50(estudiante.notas.actividadBD, 20)}</td>
+            <td>${calcularNotaSobre20(estudiante.notas.actividadBD*0.04)}</td>           
+            <td>${calcularNotaSobre50(estudiante.notas.actividadBD*0.04, 20)}</td>
           </tr>
           <tr>
             <td>Entrega 1</td>
             <td>13%</td>
-            <td>${calcularNotaSobre20(estudiante.notas.entrega1)}</td>            
-            <td>${calcularNotaSobre50(estudiante.notas.entrega1, 20)}</td>
+            <td>${calcularNotaSobre20(estudiante.notas.entrega1*0.13)}</td>            
+            <td>${calcularNotaSobre50(estudiante.notas.entrega1*0.13, 20)}</td>
           </tr>
           <tr>
             <td><strong>Total</strong></td>
@@ -87,7 +87,7 @@ function promedioTalleres(talleres) {
 
 // Función para calcular la nota sobre 20
 function calcularNotaSobre20(nota) {
-  return ((nota * 50) / 20).toFixed(2);
+  return ((nota * 20) / 50).toFixed(2);
 }
 
 // Función para calcular la nota sobre 50
