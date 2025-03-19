@@ -43,26 +43,26 @@ function consultarNotas() {
           <tr>
             <td>Quices y tareas</td>
             <td>10%</td>
-            <td>${estudiante.notas.quicesYtareas}</td>           
-            <td>-</td>
+            <td>${calcularNotaSobre20(estudiante.notas.quicesYtareas)}</td>           
+            <td>${calcularNotaSobre50(estudiante.notas.quicesYtareas, 20)}</td>
           </tr>
           <tr>
             <td>Talleres</td>
             <td>13%</td>
-            <td>${promedioTalleres(estudiante.notas.talleres)}</td>            
-            <td>-</td>
+            <td>${calcularNotaSobre20(promedioTalleres(estudiante.notas.talleres))}</td>            
+            <td>${calcularNotaSobre50(estudiante.notas.talleres, 20)}</td>
           </tr>
           <tr>
             <td>Actividad BD</td>
             <td>4%</td>
-            <td>${estudiante.notas.actividadBD}</td>           
-            <td>-</td>
+            <td>${calcularNotaSobre20(estudiante.notas.actividadBD)}</td>           
+            <td>${calcularNotaSobre50(estudiante.notas.actividadBD, 20)}</td>
           </tr>
           <tr>
             <td>Entrega 1</td>
             <td>13%</td>
-            <td>${estudiante.notas.entrega1}</td>            
-            <td>-</td>
+            <td>${calcularNotaSobre20(estudiante.notas.entrega1)}</td>            
+            <td>${calcularNotaSobre50(estudiante.notas.entrega1, 20)}</td>
           </tr>
           <tr>
             <td><strong>Total</strong></td>
@@ -86,8 +86,8 @@ function promedioTalleres(talleres) {
 }
 
 // Función para calcular la nota sobre 20
-function calcularNotaSobre20(nota, porcentaje) {
-  return ((nota * porcentaje) / 20).toFixed(2);
+function calcularNotaSobre20(nota) {
+  return ((nota * 20) / 50).toFixed(2);
 }
 
 // Función para calcular la nota sobre 50
