@@ -9,20 +9,30 @@
 <body>
   <div class="container">
     <header>
-      <h1>Consulta de Notas</h1>
+      <h1>Consulta de Notas</h1>      
     </header>
 
     <main>
       <div class="input-container">
-        <label for="codigo">Ingresa tu código de estudiante:</label>
+        <p><strong>Nuevas Tecnologías de Desarrollo</strong></p>
+        <br>
+        <label for="codigo">Ingresa la inicial de su primer nombre en mayúscula y los 6 últimos dígitos de tu código:</label>
+        <p>Ejemplo: C160578</p>
         <input type="text" id="codigo" placeholder="Código de estudiante">
         <button onclick="consultarNotas()">Consultar</button>
       </div>
 
       <div id="resultado" class="resultado"></div>
+      <br>
+      <div class="resultado">
+        <button id="btnExportar">Exportar a Excel</button>
+      </div>
+      
     </main>
   </div>
 
   <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
 </body>
 </html>
