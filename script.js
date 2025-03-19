@@ -1,31 +1,39 @@
 let estudiantes = [];  // Variable global para almacenar los estudiantes
 
-// Función para cargar los datos desde el archivo .txt
-function cargarDatos() {
-  fetch('estudiantes.txt')  // Cambiamos la extensión por .txt
-    .then(response => response.text())  // Leemos el archivo como texto
-    .then(data => {
-      estudiantes = JSON.parse(data);  // Parseamos el texto como JSON
-      console.log("Datos cargados correctamente:", estudiantes);  // Verifica que los datos sean correctos
-    })
-    .catch(error => {
-      console.error("Error al cargar el archivo .txt", error);
-    });
-}
+// Simulamos la lectura de los datos de un archivo de texto
+estudiantes = [
+  {
+    "codigo": "12345",
+    "nombre": "Juan Perez",
+    "notas": {
+      "quicesYtareas": 42,
+      "talleres": [35, 40, 45],  
+      "actividadBD": 48,
+      "entrega1": 39
+    }
+  },
+  {
+    "codigo": "67890",
+    "nombre": "Maria Lopez",
+    "notas": {
+      "quicesYtareas": 50,
+      "talleres": [50, 50, 50],  
+      "actividadBD": 50,
+      "entrega1": 50
+    }
+  }
+];
 
 
-
-// Llamamos a la función cargarDatos cuando se cargue la página
-window.onload = cargarDatos;
 
 // Función para consultar las notas
 function consultarNotas() {
   const codigo = document.getElementById("codigo").value;
   const resultado = document.getElementById("resultado");
-
+  
   // Buscar el estudiante por el código
   const estudiante = estudiantes.find(e => e.codigo === codigo);
-
+  
   if (estudiante) {
     // Mostrar los datos del estudiante en tabla
     resultado.innerHTML = `
@@ -50,7 +58,7 @@ function consultarNotas() {
             <td>Talleres</td>
             <td>13%</td>
             <td>${promedioTalleres(estudiante.notas.talleres)*0.13}</td>            
-            <td>${calcularNotaSobre50(estudiante.notas.talleres*0.13, 20)}</td>
+            <td>${calcularNotaSobre50(promedioTalleres(estudiante.notas.talleres)*0.13, 20)}</td>
           </tr>
           <tr>
             <td>Actividad BD</td>
