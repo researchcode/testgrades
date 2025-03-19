@@ -44,25 +44,25 @@ function consultarNotas() {
             <td>Quices y tareas</td>
             <td>10%</td>
             <td>${estudiante.notas.quicesYtareas}</td>           
-            <td>${calcularNotaSobre50(estudiante.notas.quicesYtareas, 10)}</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Talleres</td>
             <td>13%</td>
             <td>${promedioTalleres(estudiante.notas.talleres)}</td>            
-            <td>${calcularNotaSobre50(promedioTalleres(estudiante.notas.talleres), 13)}</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Actividad BD</td>
             <td>4%</td>
             <td>${estudiante.notas.actividadBD}</td>           
-            <td>${calcularNotaSobre50(estudiante.notas.actividadBD, 4)}</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Entrega 1</td>
             <td>13%</td>
             <td>${estudiante.notas.entrega1}</td>            
-            <td>${calcularNotaSobre50(estudiante.notas.entrega1, 13)}</td>
+            <td>-</td>
           </tr>
           <tr>
             <td><strong>Total</strong></td>
@@ -95,7 +95,6 @@ function calcularNotaSobre50(nota, notaBase) {
   return ((nota * 50) / notaBase).toFixed(2);
 }
 
-// Función para calcular el total de la
 
 // Función para calcular el total de la nota
 function calcularTotal(estudiante) {
@@ -105,3 +104,6 @@ function calcularTotal(estudiante) {
   const entrega1 = estudiante.notas.entrega1 * 0.13;
   return (quicesYtareas + talleres + actividadBD + entrega1).toFixed(2);
 }
+
+
+
