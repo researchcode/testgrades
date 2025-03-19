@@ -87,7 +87,7 @@ function promedioTalleres(talleres) {
 
 // Función para calcular la nota sobre 20
 function calcularNotaSobre20(nota) {
-  return ((nota * 20) / 50).toFixed(2);
+  return ((nota * 50) / 20).toFixed(2);
 }
 
 // Función para calcular la nota sobre 50
